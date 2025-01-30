@@ -1,0 +1,21 @@
+The CSS specificity can sometimes lead to unexpected results.  For example, consider the following scenario:
+
+```css
+#myElement {
+  color: blue;
+}
+
+.myElement {
+  color: red;
+}
+
+#myElement.myElement {
+  color: green;
+}
+
+<div id="myElement" class="myElement"></div>
+```
+
+In this case, the element will be green because the most specific selector (`#myElement.myElement`) wins.  However, this can be difficult to debug if you're not aware of CSS specificity rules.  Another common problem is forgetting to include important declarations like `!important` when necessary to override styles.
+
+Another issue is the use of incorrect or outdated syntax. Browsers might not always display an error message when it encounters invalid syntax, but it can lead to unexpected rendering issues.
